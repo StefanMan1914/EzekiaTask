@@ -16,8 +16,6 @@ class CandidateController extends Controller
 
         $file = $request->file;
 
-        dd($file);
-        
         Excel::import(new ExcelImport, $file);
         echo "Yay";
     }

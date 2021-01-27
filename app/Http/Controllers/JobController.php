@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\JobImport;
 
 class JobController extends Controller
 {
@@ -13,10 +15,8 @@ class JobController extends Controller
     function store_job(Request $request){
 
         $file = $request->file;
-
-        dd($file);
         
         Excel::import(new JobImport, $file);
-        echo "Yay";
+        echo "Yay new job";
     }
 }
