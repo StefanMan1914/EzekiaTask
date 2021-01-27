@@ -30,6 +30,11 @@
         </div>
     </div>
 </div>
-
+@foreach($new as $record)
+@foreach($record as $r)
+<li>{{print 'First Name: '.$r->first_name .'; Last Name: '. $r->last_name.'; Email: '. $r->email.'; Position: '. $r->job_name.
+'; Company: '. $r->job_type.'; From: '. $r->date1. '; To: '. $r->date2}}</li>
+@endforeach
+@endforeach
 </body>
 </html>
