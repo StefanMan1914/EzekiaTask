@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Auth::routes();
+
+Route::get('/candidate/import', 'App\Http\Controllers\CandidateController@show');
+Route::post('/candidate/import', 'App\Http\Controllers\CandidateController@store')->name('store');
